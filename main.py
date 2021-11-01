@@ -7,7 +7,6 @@ from replit import db
 
 client = discord.Client()
 
-
 sad_words = ['sad', 'depressed', 'unhappy', 'angry', 'miserable', 'depressing']
 
 starter_encouragements = [
@@ -48,13 +47,13 @@ async def on_message(message):
     msg = message.content
 
     if message.content.startswith('$hello'):
-        await message.channel.send('Hello, I am Soviet Bot.')
+        await message.channel.send('Hello, I am Zhong Xina.')
 
     if msg.startswith('$ping'):
-      await message.channel.send('ALL HAIL THE USSR')
-      
+      await message.channel.send('y e s')
+     
     if message.content.startswith('$creator'):
-        await message.channel.send('I was created by Zhong Xina!')
+        await message.channel.send('I was created by hamster!')
 
     if message.content.startswith('$inspire'):
         quote = get_quote()
@@ -67,8 +66,13 @@ async def on_message(message):
         encouraging_message = msg.split('$new ', 1)[1]
         update_encouragements(encouraging_message)
         await message.channel.send('New encouragement added!')
-    
+   
     if msg.startswith('$cmds'):
       await message.channel.send(
-        'Hello, I am Heckers Assistant! You can use the commands $help or $commands to view my commands. You can use the commands $ping or $hello, to see if I am operational, you can use the command $creator to see who I was created by, and you can use the command $inspire to have me send a random inspirational quote using https//:www.zenquotes.io. Remember, ALL HAIL THE USSR' 
+        'Hello, I am Zhong Xina! You can use the commands $help or $commands to view my commands. You can use the commands $ping or $hello, to see if I am operational, you can use the command $creator to see who I was created by, and you can use the command $inspire to have me send a random inspirational quote using https//:www.zenquotes.io, GLORY TO THE CCP'
       )
+    if msg.startswith('$socialcredit'): 
+       await message.channel.send(
+        'say it with me, TAIWAN IS NOT A COUNTRY'
+  )
+client.run(os.getenv('TOKEN'))
