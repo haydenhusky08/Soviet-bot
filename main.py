@@ -5,7 +5,6 @@ import json
 import os
 from replit import db
 
-
 client = discord.Client()
 
 starter_encouragements = [
@@ -73,6 +72,5 @@ async def on_message(message):
        await message.channel.send(
         'say it with me, TAIWAN IS NOT A COUNTRY'
   )
-
 
     client.run(os.getenv('TOKEN'))
