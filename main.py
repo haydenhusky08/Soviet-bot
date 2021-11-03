@@ -5,6 +5,7 @@ import json
 import os
 from replit import db
 
+
 client = discord.Client()
 
 sad_words = ['sad', 'depressed', 'unhappy', 'angry', 'miserable', 'depressing']
@@ -75,4 +76,6 @@ async def on_message(message):
        await message.channel.send(
         'say it with me, TAIWAN IS NOT A COUNTRY'
   )
-client.run(os.getenv('TOKEN'))
+
+
+    client.run(os.getenv('TOKEN'))
