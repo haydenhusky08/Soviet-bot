@@ -7,6 +7,8 @@ from replit import db
 
 client = discord.Client()
 
+sad_words = ['sad', 'depressed', 'unhappy', 'angry', 'miserable', 'depressing']
+
 starter_encouragements = [
     'Cheer up!', 'Hang in there.', 'You are a great thing.', 'Too bad, wierdo.'
 ]
@@ -57,7 +59,8 @@ async def on_message(message):
         quote = get_quote()
         await message.channel.send(quote)
 
-    
+    if any(word in msg for word in sad_words):
+          await message.channel.send(random.choice(options))
 
     if msg.startswith('$new'):
         encouraging_message = msg.split('$new ', 1)[1]
