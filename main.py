@@ -43,9 +43,8 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-
-    msg = message.content
-
+        msg = message.content
+ 
     if message.content.startswith('$hello'):
         await message.channel.send('Hello, I am Zhong Xina.')
 
@@ -71,9 +70,5 @@ async def on_message(message):
       await message.channel.send(
         'Hello, I am Zhong Xina! You can use the commands $help or $commands to view my commands. You can use the commands $ping or $hello, to see if I am operational, you can use the command $creator to see who I was created by, and you can use the command $inspire to have me send a random inspirational quote using https//:www.zenquotes.io, GLORY TO THE CCP'
       )
-    if msg.startswith('$socialcredit'): 
-       await message.channel.send(
-        'say it with me, TAIWAN IS NOT A COUNTRY'
-  )
 
     client.run(os.getenv('TOKEN'))
